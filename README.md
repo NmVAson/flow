@@ -3,6 +3,8 @@ This app is based on Mihaly Csikszentmihalyi's reasearch around flow. It's a sof
 
 When you start your flow test, you'll be prompted to fill out a survey 8 times a day for two weeks. The survey will ask you things like "What was the MAIN thing you were doing?" and "Describe your mood as you were beeped". At the end of the test, you'll be presented with a summary of your data. 
 
+![Node.js CI](https://github.com/NmVAson/flow/workflows/Node.js%20CI/badge.svg?event=push)
+
 ## Project setup
 ```
 npm install
