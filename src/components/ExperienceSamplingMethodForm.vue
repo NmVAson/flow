@@ -2,11 +2,13 @@
   <div class="container">
     <h1>{{ title }}</h1>
     <IntroSection/>
+    <ConfidenceSection/>
   </div>
 </template>
 
 <script>
 import IntroSection from './IntroSection.vue';
+import ConfidenceSection from './ConfidenceSection.vue';
 
 export default {
   name: 'ExperienceSamplingMethodForm',
@@ -15,6 +17,7 @@ export default {
   },
   components: {
     IntroSection,
+    ConfidenceSection,
   },
 };
 </script>

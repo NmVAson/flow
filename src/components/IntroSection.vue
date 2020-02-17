@@ -1,5 +1,5 @@
 <template>
-  <FormCard title="Contextualize the Activity">
+  <FormCard title="Context">
     <FormInput id="datetime" label="Date" type="datetime-local"/>
     <FormInput id="thought" label="What were you thinking about?" type="text"/>
     <FormInput id="place" label="Where were you?" type="text"/>
