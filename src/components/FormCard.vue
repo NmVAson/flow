@@ -7,6 +7,7 @@
       label-class="font-weight-bold pt-0"
       class="mb-0"
     >
+      <slot></slot>
     </b-form-group>
   </b-card>
 </template>
