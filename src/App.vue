@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <img alt="Flow logo" src="./assets/logo.png">
-    <ExperienceSamplingMethodForm msg="FLOW"/>
+    <ExperienceSamplingMethodForm
+      title="FLOW"/>
   </div>
 </template>
 
