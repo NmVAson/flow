@@ -32,6 +32,9 @@ const mutations = {
   updatePain(state, value) {
     state.pain = value;
   },
+  updateCompany(state, value) {
+    state.company = value;
+  },
 };
 
 const actions = {
@@ -43,6 +46,7 @@ const actions = {
   updateConfidence: ({ commit }, entry) => commit('updateConfidence', entry),
   updateMood: ({ commit }, entry) => commit('updateMood', entry),
   updatePain: ({ commit }, value) => commit('updatePain', value),
+  updateCompany: ({ commit }, value) => commit('updateCompany', value),
   postFormData: ({ state }) => {
     axios
       .post('https://nmvason-flow.builtwithdark.com/esm', {
@@ -71,6 +75,7 @@ export default new Vuex.Store({
     confidenceMap: new Map(),
     moodMap: new Map(),
     pain: null,
+    company: '',
   },
   getters,
   mutations,

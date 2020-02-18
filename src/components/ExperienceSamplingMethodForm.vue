@@ -5,6 +5,7 @@
     <ConfidenceSection/>
     <MoodSection/>
     <PainSection/>
+    <CompanySection/>
     <b-button
       variant="primary"
       v-on:click="sendAnswers"
@@ -18,6 +19,7 @@ import IntroSection from './IntroSection.vue';
 import ConfidenceSection from './ConfidenceSection.vue';
 import MoodSection from './MoodSection.vue';
 import PainSection from './PainSection.vue';
+import CompanySection from './CompanySection.vue';
 
 export default {
   name: 'ExperienceSamplingMethodForm',
@@ -34,6 +36,7 @@ export default {
     ConfidenceSection,
     MoodSection,
     PainSection,
+    CompanySection,
   },
   methods: {
     ...mapActions(['postFormData']),
