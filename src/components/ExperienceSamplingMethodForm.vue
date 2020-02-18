@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import { mapActions } from 'vuex';
 import IntroSection from './IntroSection.vue';
 import ConfidenceSection from './ConfidenceSection.vue';
 
@@ -30,26 +30,13 @@ export default {
     ConfidenceSection,
   },
   methods: {
+    ...mapActions(['postFormData']),
     sendAnswers() {
       if (this.isProcessing) return;
 
       this.isProcessing = true;
 
-      axios
-        .post('https://nmvason-flow.builtwithdark.com/esm', {
-          date: new Date(),
-          thought: 'Test thought',
-          place: 'Test location',
-          action: 'Test action',
-          why: 'Test reason',
-        })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-        .finally(() => { this.isProcessing = false; });
+      this.postFormData();
     },
   },
 };
