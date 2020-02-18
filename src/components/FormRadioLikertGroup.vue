@@ -3,9 +3,14 @@
     :label-for=id
     :label=label
     label-cols-sm="5"
-    label-align-sm="right"
-    v-bind="model">
-    <b-form-radio-group :id=id :options=options />
+    label-align-sm="right">
+    <b-form-radio-group
+      :id=id
+      :options=options
+      buttons
+      button-variant="outline-secondary"
+      v-bind:value="value"
+      v-on:input="$emit('input', $event);" />
   </b-form-group>
 </template>
 
@@ -15,10 +20,18 @@ export default {
   props: {
     id: String,
     label: String,
-    model: String,
+    value: String,
   },
   data: () => ({
-    options: ['Not at all', '2', '3', '4', '5', '6', 'Very'],
+    options: [
+      { text: 'Not at all', value: 1 },
+      { text: '2', value: 2 },
+      { text: '3', value: 3 },
+      { text: '4', value: 4 },
+      { text: '5', value: 5 },
+      { text: '6', value: 6 },
+      { text: 'Very', value: 7 },
+    ],
   }),
 };
 </script>

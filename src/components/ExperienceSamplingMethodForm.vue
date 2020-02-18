@@ -3,6 +3,7 @@
     <h1>{{ title }}</h1>
     <IntroSection/>
     <ConfidenceSection/>
+    <MoodSection/>
     <b-button
       variant="primary"
       v-on:click="sendAnswers"
@@ -14,6 +15,7 @@
 import { mapActions } from 'vuex';
 import IntroSection from './IntroSection.vue';
 import ConfidenceSection from './ConfidenceSection.vue';
+import MoodSection from './MoodSection.vue';
 
 export default {
   name: 'ExperienceSamplingMethodForm',
@@ -28,6 +30,7 @@ export default {
   components: {
     IntroSection,
     ConfidenceSection,
+    MoodSection,
   },
   methods: {
     ...mapActions(['postFormData']),
@@ -36,7 +39,7 @@ export default {
 
       this.isProcessing = true;
 
-      this.postFormData();
+      this.postFormData().finally(() => { this.isProcessing = false; });
     },
   },
 };
