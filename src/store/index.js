@@ -68,7 +68,7 @@ const actions = {
   updateWhat: ({ commit }, value) => commit('updateWhat', value),
   updateAffect: ({ commit }, value) => commit('updateAffect', value),
   postFormData: ({ state }) => {
-    FormService.postForm({
+    const promise = FormService.postForm({
       formID: state.id,
       date: state.datetime,
       thought: state.thought,
@@ -84,6 +84,8 @@ const actions = {
       what: state.what,
       affect: state.affect,
     });
+
+    return promise;
   },
 };
 

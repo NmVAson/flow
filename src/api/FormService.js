@@ -2,14 +2,8 @@ import axios from 'axios';
 
 export default {
   postForm: (data) => {
-    const promise = axios
-      .post('https://nmvason-flow.builtwithdark.com/esm', data)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const esmUrl = 'https://nmvason-flow.builtwithdark.com/esm';
+    const promise = axios.post(esmUrl, data);
 
     return promise;
   },

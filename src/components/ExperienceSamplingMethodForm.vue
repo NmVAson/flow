@@ -54,7 +54,10 @@ export default {
 
       this.isProcessing = true;
 
-      this.postFormData().finally(() => { this.isProcessing = false; });
+      this.postFormData()
+        .then(() => this.$router.push('/success'))
+        .catch(() => this.$router.push('/error'))
+        .finally(() => { this.isProcessing = false; });
     },
   },
 };
