@@ -13,7 +13,7 @@ export default {
   name: 'FormRadioLikertGroup',
   props: {
     id: String,
-    value: String,
+    value: String
   },
   data: () => ({
     options: [
@@ -23,8 +23,8 @@ export default {
       { text: 'neither', value: 0 },
       { text: 'some', value: -1 },
       { text: 'quite', value: -2 },
-      { text: 'very', value: -3 },
-    ],
-  }),
+      { text: 'very', value: -3 }
+    ]
+  })
 };
 </script>

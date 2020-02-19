@@ -18,7 +18,7 @@ export default {
   name: 'ConfidenceSection',
   components: {
     FormCard,
-    FormRadioLikertGroup,
+    FormRadioLikertGroup
   },
   data: () => ({
     questions: [
@@ -28,13 +28,13 @@ export default {
       { id: 'positivity', label: 'Did you feel good about yourself?' },
       { id: 'control', label: 'Were you in control of the situation?' },
       { id: 'self', label: 'Were you living up to your own expectations?' },
-      { id: 'others', label: 'Were you living up to expectations of others?' },
-    ],
+      { id: 'others', label: 'Were you living up to expectations of others?' }
+    ]
   }),
   methods: {
     ...mapActions([
-      'updateConfidence',
-    ]),
-  },
+      'updateConfidence'
+    ])
+  }
 };
 </script>

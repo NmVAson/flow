@@ -22,7 +22,7 @@ import FormCard from './FormCard.vue';
 export default {
   name: 'PainSection',
   components: {
-    FormCard,
+    FormCard
   },
   data: () => ({
     options: [
@@ -32,13 +32,13 @@ export default {
       { text: '4', value: 4 },
       { text: '5', value: 5 },
       { text: '6', value: 6 },
-      { text: 'severe', value: 7 },
-    ],
+      { text: 'severe', value: 7 }
+    ]
   }),
   methods: {
     ...mapActions([
-      'updatePain',
-    ]),
-  },
+      'updatePain'
+    ])
+  }
 };
 </script>

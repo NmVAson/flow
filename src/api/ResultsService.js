@@ -59,5 +59,5 @@ export default {
       .map(withTensionFlag)
       .map(withHappinessRating)
       .map(withCompetence);
-  },
+  }
 };

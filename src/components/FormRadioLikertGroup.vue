@@ -20,7 +20,7 @@ export default {
   props: {
     id: String,
     label: String,
-    value: String,
+    value: String
   },
   data: () => ({
     options: [
@@ -30,8 +30,8 @@ export default {
       { text: '4', value: 4 },
       { text: '5', value: 5 },
       { text: '6', value: 6 },
-      { text: 'very', value: 7 },
-    ],
-  }),
+      { text: 'very', value: 7 }
+    ]
+  })
 };
 </script>

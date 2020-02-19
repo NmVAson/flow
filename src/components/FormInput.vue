@@ -19,7 +19,7 @@ export default {
     id: String,
     type: String,
     label: String,
-    value: String,
-  },
+    value: String
+  }
 };
 </script>

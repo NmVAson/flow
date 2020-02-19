@@ -33,13 +33,13 @@ export default {
   components: {
     FormCard,
     FormRadioLikertGroup,
-    FormInput,
+    FormInput
   },
   computed: {
     ...mapState([
       'who',
-      'what',
-    ]),
+      'what'
+    ])
   },
   data: () => ({
     questions: [
@@ -50,15 +50,15 @@ export default {
       { id: 'success', label: 'Were you succeeding at what you were doing?' },
       { id: 'wish', label: 'Do you wish you had been doing something else?' },
       { id: 'satisfaction', label: 'Were you satisfied with how you were doing?' },
-      { id: 'importance', label: 'How important was this activity in relation to your overall goals?' },
-    ],
+      { id: 'importance', label: 'How important was this activity in relation to your overall goals?' }
+    ]
   }),
   methods: {
     ...mapActions([
       'updateFeels',
       'updateWho',
-      'updateWhat',
-    ]),
-  },
+      'updateWhat'
+    ])
+  }
 };
 </script>

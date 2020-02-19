@@ -16,8 +16,8 @@
 export default {
   name: 'FormCard',
   props: {
-    title: String,
-  },
+    title: String
+  }
 };
 </script>
 

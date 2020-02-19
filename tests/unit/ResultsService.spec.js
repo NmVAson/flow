@@ -21,9 +21,9 @@ describe('ResultsService', () => {
           thought: 'Vue',
           what: 'sleeping',
           who: 'Zach',
-          why: 'I wanted to',
-        },
-      ],
+          why: 'I wanted to'
+        }
+      ]
     };
     axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
 
@@ -38,10 +38,10 @@ describe('ResultsService', () => {
         {
           why: 'I wanted to',
           feels: {
-            wish: 1,
-          },
-        },
-      ],
+            wish: 1
+          }
+        }
+      ]
     };
     axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
 
@@ -56,10 +56,10 @@ describe('ResultsService', () => {
         {
           why: 'I had to',
           feels: {
-            wish: 2,
-          },
-        },
-      ],
+            wish: 2
+          }
+        }
+      ]
     };
     axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
 
@@ -74,13 +74,13 @@ describe('ResultsService', () => {
         {
           why: 'I had to',
           feels: {
-            wish: 1,
-          },
+            wish: 1
+          }
         },
         {
-          why: 'I had nothing else to do',
-        },
-      ],
+          why: 'I had nothing else to do'
+        }
+      ]
     };
     axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
 
@@ -95,25 +95,25 @@ describe('ResultsService', () => {
       data: [
         {
           mood: {
-            tense: 3,
-          },
+            tense: 3
+          }
         },
         {
           mood: {
-            tense: 2,
-          },
+            tense: 2
+          }
         },
         {
           mood: {
-            tense: 11,
-          },
+            tense: 11
+          }
         },
         {
           mood: {
-            tense: 0,
-          },
-        },
-      ],
+            tense: 0
+          }
+        }
+      ]
     };
     axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
 
@@ -130,15 +130,15 @@ describe('ResultsService', () => {
       data: [
         {
           mood: {
-            notTense: 3,
-          },
+            notTense: 3
+          }
         },
         {
           notMood: {
-            notTense: 3,
-          },
-        },
-      ],
+            notTense: 3
+          }
+        }
+      ]
     };
     axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
 
@@ -154,10 +154,10 @@ describe('ResultsService', () => {
       data: [
         {
           mood: {
-            happy: expectedHappinessValue,
-          },
-        },
-      ],
+            happy: expectedHappinessValue
+          }
+        }
+      ]
     };
     axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
 
@@ -172,17 +172,17 @@ describe('ResultsService', () => {
         {
           feels: {
             challenge: 0,
-            skill: 0,
-          },
+            skill: 0
+          }
         },
 
         {
           feels: {
             challenge: 1,
-            skill: 1,
-          },
-        },
-      ],
+            skill: 1
+          }
+        }
+      ]
     };
     axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
 
@@ -198,10 +198,10 @@ describe('ResultsService', () => {
         {
           feels: {
             challenge: 0,
-            skill: 2,
-          },
-        },
-      ],
+            skill: 2
+          }
+        }
+      ]
     };
     axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
 
@@ -216,10 +216,10 @@ describe('ResultsService', () => {
         {
           feels: {
             challenge: 1,
-            skill: 0,
-          },
-        },
-      ],
+            skill: 0
+          }
+        }
+      ]
     };
     axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
 
@@ -234,10 +234,10 @@ describe('ResultsService', () => {
         {
           feels: {
             notChallenge: 1,
-            notSkill: 0,
-          },
-        },
-      ],
+            notSkill: 0
+          }
+        }
+      ]
     };
     axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
 

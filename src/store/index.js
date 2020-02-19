@@ -49,7 +49,7 @@ const mutations = {
   },
   updateAffect(state, value) {
     state.affect = value;
-  },
+  }
 };
 
 const actions = {
@@ -82,11 +82,11 @@ const actions = {
       feels: state.feelsMap,
       who: state.who,
       what: state.what,
-      affect: state.affect,
+      affect: state.affect
     });
 
     return promise;
-  },
+  }
 };
 
 export default new Vuex.Store({
@@ -104,9 +104,9 @@ export default new Vuex.Store({
     feelsMap: {},
     who: '',
     what: '',
-    affect: '',
+    affect: ''
   },
   getters,
   mutations,
-  actions,
+  actions
 });

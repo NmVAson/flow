@@ -14,17 +14,17 @@ Vue.config.productionTip = false;
 const routes = [
   { path: '/form/:id', component: ExperienceSamplingMethodForm, props: true },
   { path: '/success', component: FormSuccess },
-  { path: '/error', component: FormError },
+  { path: '/error', component: FormError }
 ];
 
 const router = new VueRouter({
   mode: 'history',
   base: __dirname,
-  routes,
+  routes
 });
 
 new Vue({
   store,
   router,
-  render: (h) => h(App),
+  render: (h) => h(App)
 }).$mount('#app');

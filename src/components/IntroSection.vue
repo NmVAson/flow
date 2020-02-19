@@ -52,15 +52,15 @@ export default {
       'thought',
       'place',
       'action',
-      'why',
-    ]),
+      'why'
+    ])
   },
   data: () => ({
-    whyOptions: ['I had to', 'I wanted to', 'I had nothing else to do'],
+    whyOptions: ['I had to', 'I wanted to', 'I had nothing else to do']
   }),
   components: {
     FormCard,
-    FormInput,
+    FormInput
   },
   methods: {
     ...mapActions([
@@ -68,8 +68,8 @@ export default {
       'updateThought',
       'updatePlace',
       'updateAction',
-      'updateWhy',
-    ]),
-  },
+      'updateWhy'
+    ])
+  }
 };
 </script>

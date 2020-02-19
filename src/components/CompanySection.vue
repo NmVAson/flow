@@ -20,7 +20,7 @@ import FormCard from './FormCard.vue';
 export default {
   name: 'PainSection',
   components: {
-    FormCard,
+    FormCard
   },
   data: () => ({
     options: [
@@ -31,13 +31,13 @@ export default {
       'Sister(s) or brother(s)',
       'A female',
       'A male',
-      'Other',
-    ],
+      'Other'
+    ]
   }),
   methods: {
     ...mapActions([
-      'updateCompany',
-    ]),
-  },
+      'updateCompany'
+    ])
+  }
 };
 </script>

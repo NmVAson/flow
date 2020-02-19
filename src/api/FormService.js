@@ -6,5 +6,5 @@ export default {
     const promise = axios.post(esmUrl, data);
 
     return promise;
-  },
+  }
 };

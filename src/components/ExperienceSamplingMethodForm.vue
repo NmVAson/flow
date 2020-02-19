@@ -28,14 +28,14 @@ import FinalCommentsSection from './FinalCommentsSection.vue';
 export default {
   name: 'ExperienceSamplingMethodForm',
   props: {
-    id: String,
+    id: String
   },
   mounted() {
     this.setID(this.id);
   },
   data() {
     return {
-      isProcessing: false,
+      isProcessing: false
     };
   },
   components: {
@@ -45,7 +45,7 @@ export default {
     PainSection,
     CompanySection,
     FeelsSection,
-    FinalCommentsSection,
+    FinalCommentsSection
   },
   methods: {
     ...mapActions(['setID', 'postFormData']),
@@ -58,8 +58,8 @@ export default {
         .then(() => this.$router.push('/success'))
         .catch(() => this.$router.push('/error'))
         .finally(() => { this.isProcessing = false; });
-    },
-  },
+    }
+  }
 };
 </script>
 

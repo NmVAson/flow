@@ -24,7 +24,7 @@ export default {
   name: 'MoodSection',
   components: {
     FormCard,
-    MoodRadio,
+    MoodRadio
   },
   data: () => ({
     moods: [
@@ -40,14 +40,14 @@ export default {
       { left: 'closed', right: 'open' },
       { left: 'clear', right: 'confused' },
       { left: 'tense', right: 'relaxed' },
-      { left: 'competitive', right: 'cooperative' },
-    ],
+      { left: 'competitive', right: 'cooperative' }
+    ]
   }),
   methods: {
     ...mapActions([
-      'updateMood',
-    ]),
-  },
+      'updateMood'
+    ])
+  }
 };
 </script>
 

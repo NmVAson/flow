@@ -20,17 +20,17 @@ import FormCard from './FormCard.vue';
 export default {
   name: 'FinalCommentsSection',
   computed: {
-    ...mapState(['affect']),
+    ...mapState(['affect'])
   },
   data: () => ({
-    options: ['Yes, positively.', 'Yes, negatively.', 'No.'],
+    options: ['Yes, positively.', 'Yes, negatively.', 'No.']
   }),
   components: {
-    FormCard,
+    FormCard
   },
   methods: {
-    ...mapActions(['updateAffect']),
-  },
+    ...mapActions(['updateAffect'])
+  }
 };
 </script>
 
