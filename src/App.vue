@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <img alt="Flow logo" src="./assets/logo.png">
+    <b-navbar toggleable="lg" type="dark" variant="info">
+        <b-navbar-brand>Flow</b-navbar-brand>
+    </b-navbar>
     <ExperienceSamplingMethodForm
-      title="FLOW"/>
+      title="Experience Sampling Form"/>
   </div>
 </template>
 
@@ -24,7 +26,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 img {
   width: 200px;
