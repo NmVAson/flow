@@ -3,19 +3,13 @@
     <b-navbar toggleable="lg" type="dark" variant="info">
         <b-navbar-brand>Flow</b-navbar-brand>
     </b-navbar>
-    <ExperienceSamplingMethodForm
-      title="Experience Sampling Form"/>
+    <router-view class="view"></router-view>
   </div>
 </template>
 
 <script>
-import ExperienceSamplingMethodForm from './components/ExperienceSamplingMethodForm.vue';
-
 export default {
   name: 'App',
-  components: {
-    ExperienceSamplingMethodForm,
-  },
 };
 </script>
 

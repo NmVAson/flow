@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>{{ title }}</h1>
+    <h1>Experience Sampling Form</h1>
     <IntroSection/>
     <ConfidenceSection/>
     <MoodSection/>
@@ -28,7 +28,10 @@ import FinalCommentsSection from './FinalCommentsSection.vue';
 export default {
   name: 'ExperienceSamplingMethodForm',
   props: {
-    title: String,
+    id: String,
+  },
+  mounted() {
+    this.setID(this.id);
   },
   data() {
     return {
@@ -45,7 +48,7 @@ export default {
     FinalCommentsSection,
   },
   methods: {
-    ...mapActions(['postFormData']),
+    ...mapActions(['setID', 'postFormData']),
     sendAnswers() {
       if (this.isProcessing) return;
 

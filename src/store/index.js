@@ -8,6 +8,9 @@ Vue.use(Vuex);
 const getters = {};
 
 const mutations = {
+  setID(state, value) {
+    state.id = value;
+  },
   updateDate(state, value) {
     state.datetime = value;
   },
@@ -24,10 +27,10 @@ const mutations = {
     state.why = value;
   },
   updateConfidence(state, { key, value }) {
-    state.confidenceMap.set(key, value);
+    state.confidenceMap[key] = value;
   },
   updateMood(state, { key, value }) {
-    state.moodMap.set(key, value);
+    state.moodMap[key] = value;
   },
   updatePain(state, value) {
     state.pain = value;
@@ -36,7 +39,7 @@ const mutations = {
     state.company = value;
   },
   updateFeels(state, { key, value }) {
-    state.feelsMap.set(key, value);
+    state.feelsMap[key] = value;
   },
   updateWho(state, value) {
     state.who = value;
@@ -50,6 +53,7 @@ const mutations = {
 };
 
 const actions = {
+  setID: ({ commit }, value) => commit('setID', value),
   updateDate: ({ commit }, value) => commit('updateDate', value),
   updateThought: ({ commit }, value) => commit('updateThought', value),
   updatePlace: ({ commit }, value) => commit('updatePlace', value),
@@ -66,11 +70,20 @@ const actions = {
   postFormData: ({ state }) => {
     axios
       .post('https://nmvason-flow.builtwithdark.com/esm', {
+        formID: state.id,
         date: state.datetime,
         thought: state.thought,
         place: state.place,
         action: state.action,
         why: state.why,
+        confidence: state.confidenceMap,
+        mood: state.moodMap,
+        pain: state.pain,
+        company: state.company,
+        feels: state.feelsMap,
+        who: state.who,
+        what: state.what,
+        affect: state.affect,
       })
       .then((response) => {
         console.log(response);
@@ -83,16 +96,17 @@ const actions = {
 
 export default new Vuex.Store({
   state: {
+    id: null,
     datetime: moment().format('YYYY-MM-DDTHH:mm:ss'),
     thought: '',
     place: '',
     action: '',
     why: '',
-    confidenceMap: new Map(),
-    moodMap: new Map(),
+    confidenceMap: {},
+    moodMap: {},
     pain: null,
     company: '',
-    feelsMap: new Map(),
+    feelsMap: {},
     who: '',
     what: '',
     affect: '',
