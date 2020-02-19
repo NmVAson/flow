@@ -29,4 +29,7 @@ export default {
 img {
   width: 200px;
 }
+.btn-group > .btn:not(:first-child) {
+  border-left-width: 0;
+}
 </style>

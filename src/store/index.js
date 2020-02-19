@@ -44,6 +44,9 @@ const mutations = {
   updateWhat(state, value) {
     state.what = value;
   },
+  updateAffect(state, value) {
+    state.affect = value;
+  },
 };
 
 const actions = {
@@ -59,6 +62,7 @@ const actions = {
   updateFeels: ({ commit }, entry) => commit('updateFeels', entry),
   updateWho: ({ commit }, value) => commit('updateWho', value),
   updateWhat: ({ commit }, value) => commit('updateWhat', value),
+  updateAffect: ({ commit }, value) => commit('updateAffect', value),
   postFormData: ({ state }) => {
     axios
       .post('https://nmvason-flow.builtwithdark.com/esm', {
@@ -91,6 +95,7 @@ export default new Vuex.Store({
     feelsMap: new Map(),
     who: '',
     what: '',
+    affect: '',
   },
   getters,
   mutations,

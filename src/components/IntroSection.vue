@@ -46,9 +46,6 @@ import FormInput from './FormInput.vue';
 
 export default {
   name: 'IntroSection',
-  props: {
-    title: String,
-  },
   computed: {
     ...mapState([
       'datetime',
