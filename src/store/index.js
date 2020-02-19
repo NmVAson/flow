@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import moment from 'moment';
-import axios from 'axios';
+import FormService from '../api/FormService';
 
 Vue.use(Vuex);
 
@@ -68,29 +68,22 @@ const actions = {
   updateWhat: ({ commit }, value) => commit('updateWhat', value),
   updateAffect: ({ commit }, value) => commit('updateAffect', value),
   postFormData: ({ state }) => {
-    axios
-      .post('https://nmvason-flow.builtwithdark.com/esm', {
-        formID: state.id,
-        date: state.datetime,
-        thought: state.thought,
-        place: state.place,
-        action: state.action,
-        why: state.why,
-        confidence: state.confidenceMap,
-        mood: state.moodMap,
-        pain: state.pain,
-        company: state.company,
-        feels: state.feelsMap,
-        who: state.who,
-        what: state.what,
-        affect: state.affect,
-      })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    FormService.postForm({
+      formID: state.id,
+      date: state.datetime,
+      thought: state.thought,
+      place: state.place,
+      action: state.action,
+      why: state.why,
+      confidence: state.confidenceMap,
+      mood: state.moodMap,
+      pain: state.pain,
+      company: state.company,
+      feels: state.feelsMap,
+      who: state.who,
+      what: state.what,
+      affect: state.affect,
+    });
   },
 };
 
