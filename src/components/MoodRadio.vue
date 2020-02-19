@@ -17,13 +17,13 @@ export default {
   },
   data: () => ({
     options: [
-      { text: 'very', value: 1 },
+      { text: 'very', value: 3 },
       { text: 'quite', value: 2 },
-      { text: 'some', value: 3 },
-      { text: 'neither', value: 4 },
-      { text: 'some', value: 5 },
-      { text: 'quite', value: 6 },
-      { text: 'very', value: 7 },
+      { text: 'some', value: 1 },
+      { text: 'neither', value: 0 },
+      { text: 'some', value: -1 },
+      { text: 'quite', value: -2 },
+      { text: 'very', value: -3 },
     ],
   }),
 };

@@ -43,7 +43,7 @@ export default {
   },
   data: () => ({
     questions: [
-      { id: 'challenge', label: 'Are you challenged be the activity?' },
+      { id: 'challenge', label: 'Are you challenged by the activity?' },
       { id: 'skill', label: 'Are you skilled in the activity?' },
       { id: 'self-importance', label: 'Was this activity important to you?' },
       { id: 'others-importance', label: 'Was this activity important to others?' },
