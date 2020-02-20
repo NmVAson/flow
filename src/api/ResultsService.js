@@ -124,5 +124,14 @@ export default {
 
         return map;
       }, new Map());
+  },
+
+  getTotalResponses: async () => {
+    const { id } = store.state;
+    const esmUrl = `https://nmvason-flow.builtwithdark.com/esm/${id}`;
+    const response = await axios.get(esmUrl);
+    const { data } = response;
+
+    return data.length;
   }
 };

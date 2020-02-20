@@ -18,8 +18,8 @@ export default {
     id: String
   },
   data: () => ({
-    percentInFlow: Number,
-    chartData: Object,
+    percentInFlow: '---',
+    chartData: {},
     chartOptions: {
       tooltips: {
         enabled: true,

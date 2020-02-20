@@ -324,4 +324,15 @@ describe('ResultsService', () => {
     expect(results.get('other')).toHaveLength(1);
     expect(results.get('other')).toContain(mehExperience.action);
   });
+
+  it('calculates the total number of forms completed', async () => {
+    const expectedResults = {
+      data: [{}, {}, {}, {}]
+    };
+    axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
+
+    const result = await ResultsService.getTotalResponses();
+
+    expect(result).toBe(4);
+  });
 });

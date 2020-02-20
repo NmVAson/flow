@@ -36,9 +36,9 @@ export default {
     id: String
   },
   data: () => ({
-    percentHappy: Number,
-    happyList: Array,
-    sadList: Array
+    percentHappy: '---',
+    happyList: [],
+    sadList: []
   }),
   mounted() {
     ResultsService
