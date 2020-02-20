@@ -19,7 +19,20 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #254441;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 40px;
+}
+h1 {
+  padding: 20px;
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.5em;
 }
 img {
   width: 200px;

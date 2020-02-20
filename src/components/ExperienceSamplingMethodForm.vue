@@ -62,15 +62,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.container{
-  display: flex;
-  flex-direction: column;
-  padding: 40px;
-}
-h1 {
-  padding: 20px;
-  font-size: 2em;
-}
-</style>
