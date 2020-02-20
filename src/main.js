@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import './plugins/bootstrap-vue';
+import './plugins/vue-fontawesome';
 import VueRouter from 'vue-router';
 import App from './App.vue';
 import store from './store';
