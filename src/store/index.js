@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import moment from 'moment';
-import FormService from '../api/FormService';
+import FormService from '@/api/FormService';
 
 Vue.use(Vuex);
 
