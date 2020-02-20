@@ -6,6 +6,7 @@ import store from './store';
 import ExperienceSamplingMethodForm from './components/ExperienceSamplingMethodForm.vue';
 import FormSuccess from './components/FormSuccess.vue';
 import FormError from './components/FormError.vue';
+import Results from './components/Results.vue';
 
 Vue.use(VueRouter);
 
@@ -14,7 +15,8 @@ Vue.config.productionTip = false;
 const routes = [
   { path: '/form/:id', component: ExperienceSamplingMethodForm, props: true },
   { path: '/success', component: FormSuccess },
-  { path: '/error', component: FormError }
+  { path: '/error', component: FormError },
+  { path: '/results/:id', component: Results, props: true }
 ];
 
 const router = new VueRouter({

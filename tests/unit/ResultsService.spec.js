@@ -245,4 +245,43 @@ describe('ResultsService', () => {
 
     expect(results[0].competence).toBeUndefined();
   });
+
+  it('counts the number of experiences in each channel', async () => {
+    const flowExperience = {
+      feels: {
+        challenge: 1,
+        skill: 1
+      }
+    };
+    const boredExperience = {
+      feels: {
+        challenge: 0,
+        skill: 2
+      }
+    };
+    const anxiousExperience = {
+      feels: {
+        challenge: 1,
+        skill: 0
+      }
+    };
+    const expectedResults = {
+      data: [
+        flowExperience,
+        boredExperience,
+        boredExperience,
+        anxiousExperience,
+        anxiousExperience,
+        anxiousExperience
+      ]
+    };
+    axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
+
+    const results = await ResultsService.getActivitiesByChannelofExperience();
+
+    expect(results.size).toBe(3);
+    expect(results.get('flow')).toHaveLength(1);
+    expect(results.get('boredom')).toHaveLength(2);
+    expect(results.get('anxiety')).toHaveLength(3);
+  });
 });

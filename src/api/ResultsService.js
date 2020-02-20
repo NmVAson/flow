@@ -31,16 +31,35 @@ function withHappinessRating(experience) {
   return processedExperience;
 }
 
-function withCompetence(experience) {
-  const processedExperience = experience;
+function isInFlow(experience) {
   const skillLevel = experience.feels?.skill;
   const challengeLevel = experience.feels?.challenge;
 
-  if (skillLevel && challengeLevel && skillLevel !== 0 && skillLevel === challengeLevel) {
+  return skillLevel && challengeLevel && skillLevel !== 0 && skillLevel === challengeLevel;
+}
+
+function isInBoredom(experience) {
+  const skillLevel = experience.feels?.skill;
+  const challengeLevel = experience.feels?.challenge;
+
+  return skillLevel > challengeLevel;
+}
+
+function isInAnxiety(experience) {
+  const skillLevel = experience.feels?.skill;
+  const challengeLevel = experience.feels?.challenge;
+
+  return skillLevel < challengeLevel;
+}
+
+function withCompetence(experience) {
+  const processedExperience = experience;
+
+  if (isInFlow(experience)) {
     processedExperience.competence = 'flow';
-  } else if (skillLevel > challengeLevel) {
+  } else if (isInBoredom(experience)) {
     processedExperience.competence = 'boredom';
-  } else if (skillLevel < challengeLevel) {
+  } else if (isInAnxiety(experience)) {
     processedExperience.competence = 'anxiety';
   }
 
@@ -59,5 +78,25 @@ export default {
       .map(withTensionFlag)
       .map(withHappinessRating)
       .map(withCompetence);
+  },
+
+  getActivitiesByChannelofExperience: async () => {
+    const { id } = store.state;
+    const esmUrl = `https://nmvason-flow.builtwithdark.com/esm/${id}`;
+    const response = await axios.get(esmUrl);
+    const { data } = response;
+
+    return data
+      .map(withCompetence)
+      .filter((d) => d.competence)
+      .reduce((map, d) => {
+        const key = d.competence;
+        const actionList = map.get(key) || [];
+        actionList.push(d.action);
+
+        map.set(key, actionList);
+
+        return map;
+      }, new Map());
   }
 };
