@@ -54,8 +54,8 @@ export default {
       const counts = values.map((activityList) => activityList.length);
       const totalExperiences = counts.reduce((total, cur) => total + cur, 0);
 
-      const percentInFlow = result.get('flow').length / totalExperiences;
-      this.percentInFlow = Math.round(percentInFlow * 100);
+      const percentInFlow = result.get('flow')?.length / totalExperiences;
+      this.percentInFlow = Math.round(percentInFlow * 100) || '---';
 
       const dataset = {
         label: 'Channels of Experience',
@@ -72,10 +72,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.channels {
-  width: 500px;
-  margin: auto;
-}
-</style>

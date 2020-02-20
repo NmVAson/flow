@@ -284,4 +284,44 @@ describe('ResultsService', () => {
     expect(results.get('boredom')).toHaveLength(2);
     expect(results.get('anxiety')).toHaveLength(3);
   });
+
+  it('categorizes experiences by happy or sad', async () => {
+    const happyExperience = {
+      action: 'happy thing',
+      mood: {
+        happy: 3
+      }
+    };
+    const sadExperience = {
+      action: 'sad thing',
+      mood: {
+        happy: -3
+      }
+    };
+    const mehExperience = {
+      action: 'okayest thing',
+      mood: {
+        happy: 0
+      }
+    };
+    const expectedResults = {
+      data: [
+        happyExperience,
+        sadExperience,
+        sadExperience,
+        mehExperience
+      ]
+    };
+    axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
+
+    const results = await ResultsService.getActivitiesByMood();
+
+    expect(results.size).toBe(3);
+    expect(results.get('happy')).toHaveLength(1);
+    expect(results.get('happy')).toContain(happyExperience.action);
+    expect(results.get('sad')).toHaveLength(2);
+    expect(results.get('sad')).toContain(sadExperience.action);
+    expect(results.get('other')).toHaveLength(1);
+    expect(results.get('other')).toContain(mehExperience.action);
+  });
 });

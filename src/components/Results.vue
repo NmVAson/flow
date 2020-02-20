@@ -2,17 +2,20 @@
 <div class="container">
   <h1>Results</h1>
   <ResultsChannelsDonutChart/>
+  <ResultsHappinessTable/>
 </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
 import ResultsChannelsDonutChart from './ResultsChannelsDonutChart.vue';
+import ResultsHappinessTable from './ResultsHappinessTable.vue';
 
 export default {
   name: 'Results',
   components: {
-    ResultsChannelsDonutChart
+    ResultsChannelsDonutChart,
+    ResultsHappinessTable
   },
   props: {
     id: String
@@ -26,9 +29,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .channels {
-  width: 500px;
   margin: auto;
+  padding: 50px;
 }
 </style>

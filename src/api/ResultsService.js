@@ -98,5 +98,31 @@ export default {
 
         return map;
       }, new Map());
+  },
+
+  getActivitiesByMood: async () => {
+    const { id } = store.state;
+    const esmUrl = `https://nmvason-flow.builtwithdark.com/esm/${id}`;
+    const response = await axios.get(esmUrl);
+    const { data } = response;
+
+    return data
+      .reduce((map, d) => {
+        let key;
+        if (d.mood?.happy > 0) {
+          key = 'happy';
+        } else if (d.mood?.happy < 0) {
+          key = 'sad';
+        } else {
+          key = 'other';
+        }
+
+        const actionList = map.get(key) || [];
+        actionList.push(d.action);
+
+        map.set(key, actionList);
+
+        return map;
+      }, new Map());
   }
 };

@@ -32,6 +32,7 @@ h1 {
   font-size: 2em;
 }
 h2 {
+  padding: 15px;
   font-size: 1.5em;
 }
 img {
