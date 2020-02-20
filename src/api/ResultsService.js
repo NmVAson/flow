@@ -3,9 +3,9 @@ import axios from 'axios';
 function withMotivatorFlag(experience) {
   const processedExperience = experience;
 
-  if (experience.why === 'I wanted to' && experience.feels.wish === 1) {
+  if (experience.why === 'I wanted to' && experience.feels.wish === 0) {
     processedExperience.isIntrinsic = true;
-  } else if (experience.why === 'I had to' && experience.feels.wish > 1) {
+  } else if (experience.why === 'I had to' && experience.feels.wish > 0) {
     processedExperience.isIntrinsic = false;
   }
 
