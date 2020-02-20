@@ -2,13 +2,12 @@
 <div class="container">
   <h1>Results</h1>
   <p class="text-muted">{{ totalExperiences }} / 56 experience sampling forms completed</p>
-  <ResultsChannelsDonutChart/>
-  <ResultsHappinessTable/>
+  <ResultsChannelsDonutChart :userID="id"/>
+  <ResultsHappinessTable :userID="id"/>
 </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
 import ResultsService from '@/api/ResultsService';
 import ResultsChannelsDonutChart from './ResultsChannelsDonutChart.vue';
 import ResultsHappinessTable from './ResultsHappinessTable.vue';
@@ -28,12 +27,9 @@ export default {
     };
   },
   mounted() {
-    this.setID(this.id);
-
-    ResultsService.getTotalResponses().then((result) => { this.totalExperiences = result; });
-  },
-  methods: {
-    ...mapActions(['setID'])
+    ResultsService
+      .getTotalResponses(this.id)
+      .then((result) => { this.totalExperiences = result; });
   }
 };
 </script>

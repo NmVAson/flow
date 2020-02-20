@@ -15,7 +15,7 @@ export default {
     ResultsDonutChart
   },
   props: {
-    id: String
+    userID: String
   },
   data: () => ({
     percentInFlow: '---',
@@ -44,7 +44,7 @@ export default {
   }),
   mounted() {
     ResultsService
-      .getActivitiesByChannelofExperience()
+      .getActivitiesByChannelofExperience(this.userID)
       .then(this.setChartData);
   },
   methods: {

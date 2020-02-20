@@ -33,7 +33,7 @@ import ResultsService from '@/api/ResultsService';
 export default {
   name: 'ResultsHappinessTable',
   props: {
-    id: String
+    userID: String
   },
   data: () => ({
     percentHappy: '---',
@@ -42,7 +42,7 @@ export default {
   }),
   mounted() {
     ResultsService
-      .getActivitiesByMood()
+      .getActivitiesByMood(this.userID)
       .then(this.setLists);
   },
   methods: {

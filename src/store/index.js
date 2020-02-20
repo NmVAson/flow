@@ -8,9 +8,6 @@ Vue.use(Vuex);
 const getters = {};
 
 const mutations = {
-  setID(state, value) {
-    state.id = value;
-  },
   updateDate(state, value) {
     state.datetime = value;
   },
@@ -53,7 +50,6 @@ const mutations = {
 };
 
 const actions = {
-  setID: ({ commit }, value) => commit('setID', value),
   updateDate: ({ commit }, value) => commit('updateDate', value),
   updateThought: ({ commit }, value) => commit('updateThought', value),
   updatePlace: ({ commit }, value) => commit('updatePlace', value),
@@ -67,9 +63,9 @@ const actions = {
   updateWho: ({ commit }, value) => commit('updateWho', value),
   updateWhat: ({ commit }, value) => commit('updateWhat', value),
   updateAffect: ({ commit }, value) => commit('updateAffect', value),
-  postFormData: ({ state }) => {
+  postFormData: ({ state }, userID) => {
     const promise = FormService.postForm({
-      formID: state.id,
+      formID: userID,
       date: state.datetime,
       thought: state.thought,
       place: state.place,
@@ -91,7 +87,6 @@ const actions = {
 
 export default new Vuex.Store({
   state: {
-    id: null,
     datetime: moment().format('YYYY-MM-DDTHH:mm:ss'),
     thought: '',
     place: '',

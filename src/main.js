@@ -14,10 +14,28 @@ Vue.use(VueRouter);
 Vue.config.productionTip = false;
 
 const routes = [
-  { path: '/form/:id', component: ExperienceSamplingMethodForm, props: true },
-  { path: '/success', component: FormSuccess },
-  { path: '/error', component: FormError },
-  { path: '/results/:id', component: Results, props: true }
+  {
+    name: 'form',
+    path: '/form/:id',
+    component: ExperienceSamplingMethodForm,
+    props: true
+  },
+  {
+    name: 'success',
+    path: '/success/:id',
+    component: FormSuccess,
+    props: true
+  },
+  {
+    path: '/error',
+    component: FormError
+  },
+  {
+    name: 'results',
+    path: '/results/:id',
+    component: Results,
+    props: true
+  }
 ];
 
 const router = new VueRouter({

@@ -6,18 +6,18 @@
     </template>
     <hr class="my-4">
     <p>Keep up the good work! You can always
-      <router-link :to="{ path: `results/${id}` }">view your pending results.</router-link>
+      <router-link :to="{ name: 'results', params: { id: id } }">
+        view your pending results.
+      </router-link>
     </p>
   </b-jumbotron>
 </template>
 
 <script>
-import { mapState } from 'vuex';
-
 export default {
   name: 'FormSuccess',
-  computed: {
-    ...mapState(['id'])
+  props: {
+    id: String
   }
 };
 </script>

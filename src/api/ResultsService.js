@@ -1,5 +1,4 @@
 import axios from 'axios';
-import store from '../store';
 
 function withMotivatorFlag(experience) {
   const processedExperience = experience;
@@ -67,8 +66,7 @@ function withCompetence(experience) {
 }
 
 export default {
-  getAllResults: async () => {
-    const { id } = store.state;
+  getAllResults: async (id) => {
     const esmUrl = `https://nmvason-flow.builtwithdark.com/esm/${id}`;
     const response = await axios.get(esmUrl);
 
@@ -80,8 +78,7 @@ export default {
       .map(withCompetence);
   },
 
-  getActivitiesByChannelofExperience: async () => {
-    const { id } = store.state;
+  getActivitiesByChannelofExperience: async (id) => {
     const esmUrl = `https://nmvason-flow.builtwithdark.com/esm/${id}`;
     const response = await axios.get(esmUrl);
     const { data } = response;
@@ -100,8 +97,7 @@ export default {
       }, new Map());
   },
 
-  getActivitiesByMood: async () => {
-    const { id } = store.state;
+  getActivitiesByMood: async (id) => {
     const esmUrl = `https://nmvason-flow.builtwithdark.com/esm/${id}`;
     const response = await axios.get(esmUrl);
     const { data } = response;
@@ -126,8 +122,7 @@ export default {
       }, new Map());
   },
 
-  getTotalResponses: async () => {
-    const { id } = store.state;
+  getTotalResponses: async (id) => {
     const esmUrl = `https://nmvason-flow.builtwithdark.com/esm/${id}`;
     const response = await axios.get(esmUrl);
     const { data } = response;

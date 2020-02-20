@@ -30,9 +30,6 @@ export default {
   props: {
     id: String
   },
-  mounted() {
-    this.setID(this.id);
-  },
   data() {
     return {
       isProcessing: false
@@ -48,14 +45,14 @@ export default {
     FinalCommentsSection
   },
   methods: {
-    ...mapActions(['setID', 'postFormData']),
+    ...mapActions(['postFormData']),
     sendAnswers() {
       if (this.isProcessing) return;
 
       this.isProcessing = true;
 
-      this.postFormData()
-        .then(() => this.$router.push('/success'))
+      this.postFormData(this.id)
+        .then(() => this.$router.push({ name: 'success', params: { userId: this.id } }))
         .catch(() => this.$router.push('/error'))
         .finally(() => { this.isProcessing = false; });
     }
