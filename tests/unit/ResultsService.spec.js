@@ -325,6 +325,54 @@ describe('ResultsService', () => {
     expect(results.get('other')).toContain(mehExperience.action);
   });
 
+  it('sorts happy experiences in descending order', async () => {
+    const happiestExperience = {
+      action: 'happiest thing',
+      mood: {
+        happy: 3
+      }
+    };
+    const happyExperience = {
+      action: 'happy thing',
+      mood: {
+        happy: 1
+      }
+    };
+    const expectedResults = {
+      data: [happyExperience, happiestExperience]
+    };
+    axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
+
+    const results = await ResultsService.getActivitiesByMood();
+
+    expect(results.get('happy')[0]).toBe(happiestExperience.action);
+    expect(results.get('happy')[1]).toBe(happyExperience.action);
+  });
+
+  it('sorts happy experiences in descending order', async () => {
+    const saddestExperience = {
+      action: 'saddest thing',
+      mood: {
+        happy: -3
+      }
+    };
+    const sadExperience = {
+      action: 'sad thing',
+      mood: {
+        happy: -1
+      }
+    };
+    const expectedResults = {
+      data: [sadExperience, saddestExperience]
+    };
+    axios.get.mockImplementationOnce(() => Promise.resolve(expectedResults));
+
+    const results = await ResultsService.getActivitiesByMood();
+
+    expect(results.get('sad')[0]).toBe(saddestExperience.action);
+    expect(results.get('sad')[1]).toBe(sadExperience.action);
+  });
+
   it('calculates the total number of forms completed', async () => {
     const expectedResults = {
       data: [{}, {}, {}, {}]

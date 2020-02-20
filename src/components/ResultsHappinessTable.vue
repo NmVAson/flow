@@ -2,7 +2,7 @@
 <div class="channels">
   <h2>{{ percentHappy }}% of your experiences made you happy!</h2>
   <b-card-group deck>
-    <b-card no-body>
+    <b-card no-body footer="in descending order of happiness">
       <b-card-header>
         <font-awesome-icon icon="laugh-beam" size="3x"></font-awesome-icon>
       </b-card-header>
@@ -13,7 +13,7 @@
       </b-card-body>
     </b-card>
 
-    <b-card no-body>
+    <b-card no-body footer="in descending order of sadness">
       <b-card-header>
         <font-awesome-icon icon="sad-cry" size="3x"></font-awesome-icon>
       </b-card-header>

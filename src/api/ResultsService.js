@@ -103,6 +103,7 @@ export default {
     const { data } = response;
 
     return data
+      .sort((a, b) => Math.abs(b.mood?.happy) - Math.abs(a.mood?.happy))
       .reduce((map, d) => {
         let key;
         if (d.mood?.happy > 0) {
