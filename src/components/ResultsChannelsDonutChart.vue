@@ -34,10 +34,9 @@ export default {
           }),
           afterLabel: ((tooltipItems, data) => {
             const i = tooltipItems.index;
-            const activities = data.datasets[0].activities[i];
-            const channel = data.labels[tooltipItems.index];
+            const activities = data.datasets[0].activities[i].map((a) => `- ${a}`);
 
-            return ['', `Activities for ${channel}:`, ...activities];
+            return ['', 'Experiences:', ...activities];
           })
         }
       }
