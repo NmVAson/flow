@@ -7,6 +7,10 @@ Results computed based on page 117 of Csikszentmihalyi's [Flow and the Foundatio
 
 ![Node.js CI](https://github.com/NmVAson/flow/workflows/Node.js%20CI/badge.svg?event=push)
 
+## Color Palette 
+![palette](./palette.png)
+[PDF](https://coolors.co/export/pdf/ff6f59-17a2b8-1f363d-40798c-70a9a1)
+
 ## Project setup
 ```
 npm install
