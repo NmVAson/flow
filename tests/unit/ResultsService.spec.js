@@ -74,7 +74,7 @@ describe('ResultsService', () => {
         {
           why: 'I had to',
           feels: {
-            wish: 1
+            wish: 0
           }
         },
         {
