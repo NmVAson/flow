@@ -8,6 +8,7 @@ import ExperienceSamplingMethodForm from './components/ExperienceSamplingMethodF
 import FormSuccess from './components/FormSuccess.vue';
 import FormError from './components/FormError.vue';
 import Results from './components/Results.vue';
+import ShortFlowForm from './components/ShortFlowForm.vue';
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,12 @@ const routes = [
     name: 'form',
     path: '/form/:id',
     component: ExperienceSamplingMethodForm,
+    props: true
+  },
+  {
+    name: 'short',
+    path: '/short/:id',
+    component: ShortFlowForm,
     props: true
   },
   {
