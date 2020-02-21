@@ -4,7 +4,7 @@
   <b-card-group deck>
     <b-card no-body footer="in descending order of happiness" footer-class="text-muted">
       <b-card-header>
-        <font-awesome-icon icon="laugh-beam" size="3x"></font-awesome-icon>
+        <font-awesome-icon icon="laugh-beam" size="3x"/>
       </b-card-header>
       <b-card-body>
         <b-list-group flush v-for="item in happyList" :key="item">
@@ -15,7 +15,7 @@
 
     <b-card no-body footer="in descending order of sadness" footer-class="text-muted">
       <b-card-header>
-        <font-awesome-icon icon="sad-cry" size="3x"></font-awesome-icon>
+        <font-awesome-icon icon="sad-cry" size="3x"/>
       </b-card-header>
       <b-card-body>
         <b-list-group flush v-for="item in sadList" :key="item">

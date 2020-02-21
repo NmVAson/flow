@@ -9,12 +9,17 @@ import FormSuccess from './components/FormSuccess.vue';
 import FormError from './components/FormError.vue';
 import Results from './components/Results.vue';
 import ShortFlowForm from './components/ShortFlowForm.vue';
+import SignUp from './components/SignUp.vue';
 
 Vue.use(VueRouter);
 
 Vue.config.productionTip = false;
 
 const routes = [
+  {
+    path: '/',
+    component: SignUp
+  },
   {
     name: 'form',
     path: '/form/:id',

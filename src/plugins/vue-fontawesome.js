@@ -8,7 +8,16 @@ import {
   faThumbsUp,
   faThumbsDown
 } from '@fortawesome/free-solid-svg-icons';
+import { faSlack } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-library.add(faLaughBeam, faSadCry, faMeh, faSadTear, faThumbsUp, faThumbsDown);
+library.add(
+  faLaughBeam,
+  faSadCry,
+  faMeh,
+  faSadTear,
+  faThumbsUp,
+  faThumbsDown,
+  faSlack
+);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
