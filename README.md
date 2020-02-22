@@ -1,5 +1,5 @@
 # flow
-This app is based on Mihaly Csikszentmihalyi's reasearch around flow. It's a software implementation of his [Experience Sampling Form](https://link.springer.com/chapter/10.1007/978-94-017-9088-8_3), which you may use to determine what activities put you "in flow." 
+This app is based on Mihaly Csikszentmihalyi's research around flow. It's a software implementation of his [Experience Sampling Form](https://link.springer.com/chapter/10.1007/978-94-017-9088-8_3), which you may use to determine what activities put you "in flow." 
 
 When you start your flow test, you'll be prompted, randomly, to fill out a survey 6 to 9 times a day during waking hours (8 am to 10 pm) for 7 days. This will result in a total of 56 signals over the 7-day period. The survey will ask you things like "What was the MAIN thing you were doing?" and "Describe your mood as you were beeped". At the end of the test, you'll be presented with a summary of your data. 
 
