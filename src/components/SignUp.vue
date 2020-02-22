@@ -3,7 +3,7 @@
     <template v-slot:header>Ohhi!</template>
     <template v-slot:lead>
       This app administers an experience test based on Mihaly Csikszentmihalyi's
-      reasearch on flow, or being "in the zone". It'll help you figure out which
+      research on flow, or being "in the zone". It'll help you figure out which
       activities you do put you in flow, and contribute to your overall happiness.
     </template>
     <hr class="my-4">
