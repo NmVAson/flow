@@ -1,5 +1,5 @@
 <template>
-  <b-jumbotron bg-variant="light" class="container">
+  <b-jumbotron bg-variant="light">
     <template v-slot:header>Ohhi!</template>
     <template v-slot:lead>
       This app administers an experience test based on Mihaly Csikszentmihalyi's
@@ -16,7 +16,8 @@
     </blockquote>
     <hr class="my-4">
     <h2>The Test</h2>
-    <p>A slackbot will prompt you, randomly, to fill out a survey 6 to 9 times
+    <p class="text-muted">administered by the Flow Test slackbot</p>
+    <p>The slackbot will prompt you, randomly, to fill out a survey 6 to 9 times
       a day during waking hours (8 am to 10 pm) for 7 days. At the end
       of the test, you'll be able to see activities that put you in flow,
       activities that bore you, and activities that give you anxiety.</p>
@@ -38,8 +39,9 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  padding: 0 20%;
+.jumbotron {
+  padding: 30px 30%;
+  margin-bottom: 0;
 }
 .blockquote {
   padding: 0 20%;

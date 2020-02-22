@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Short Experience Sampling Form</h1>
+    <h1>Experience Sampling Form</h1>
     <FormCard>
       <FormInput
         id="datetime"
